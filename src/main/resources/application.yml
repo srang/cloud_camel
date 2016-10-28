@@ -1,0 +1,5 @@
+org.test.cloud.sandbox:
+  db:
+    host: "localhost"
+    port: "8080"
+    context: "/data"
