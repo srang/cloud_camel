@@ -13,6 +13,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DummyRoute extends RouteBuilder {
+
+    @Value("${org.test.cloud.sandbox.application.port}")
+    String appPort;
+
     @Value("${org.test.cloud.sandbox.db.host}")
     String dbHost;
 
@@ -24,7 +28,7 @@ public class DummyRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        restConfiguration().component("undertow").port(8080).componentProperty("bridgeEndpoint","true");
+        restConfiguration().component("undertow").port(appPort).componentProperty("bridgeEndpoint","true");
         rest("/hello").id("hello-endpoint")
                 .get("").id("hello-world-empty").to("direct:world")
                 .get("/{person}").id("hello-world-name")

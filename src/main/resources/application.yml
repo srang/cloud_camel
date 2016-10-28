@@ -1,5 +1,8 @@
 org.test.cloud.sandbox:
+  application:
+    context: "${APP_CONTEXT:}"
+    port: "${APP_PORT:8080}"
   db:
-    host: "localhost"
-    port: "8080"
-    context: "/data"
+    host: "${DB_HOST:localhost}"
+    port: "${DB_PORT:8080}"
+    context: "${DB_CONTEXT:/data}"
