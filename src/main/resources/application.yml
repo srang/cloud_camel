@@ -6,3 +6,4 @@ org.test.cloud.sandbox:
     host: "${DB_HOST:localhost}"
     port: "${DB_PORT:8080}"
     context: "${DB_CONTEXT:/data}"
+camel.springboot.main-run-controller: true
